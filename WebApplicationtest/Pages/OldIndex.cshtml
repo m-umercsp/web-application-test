@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center" ng-controller="controllerParent as parent">
+    <h1 class="display-4">Welcome {{title}}</h1>
+    <h3 class="display-4">DomText {{Tesdata}}</h3>
+    <h4 class="display-4">Javascripttext: {{TesdataJavascript}}</h4>
+    <hr />
+    <button class="btn btn-primary" ng-click="SayGoodbyChild()">Say good bye child</button>
+
+
+    <div class="text-center" ng-controller="controllerChild as child">
+        <h1 class="display-4">Welcome {{childtitle}}</h1>
+        <h1 class="display-4">Message from parent {{MessageFromParent}}</h1>
+        <br />
+        <br>
+        <button class="btn btn-primary" ng-click="ShowList()">Fetch childdata</button>
+
+
+        <table class="table mt-5">
+            <tr>
+                <td>Trackid</td>
+                <td>id</td>
+                <td>name</td>
+            </tr>
+            <tr ng-repeat="data in MyList track by $index">
+                <td>{{$index}}</td>
+                <td>{{data.id}}</td>
+                <td>{{data.name}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

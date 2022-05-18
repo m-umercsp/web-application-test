@@ -1,0 +1,9 @@
+<div class="text-center">
+  <h1 class="display-4">Welcome {{title}}</h1>
+  <h3 class="display-4">DomText: {{testData}}</h3>
+  <h4 class="display-4">JavaScriptText: {{testDataJavascript}}</h4>
+  <hr/>
+  <button class="btn btn-primary" (click)="sayGoodByeChild()">Say good bye child</button>
+
+  <app-child [messageFromParent]="messageForChild"></app-child>
+</div>
